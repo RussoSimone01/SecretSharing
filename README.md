@@ -1,7 +1,7 @@
 # SecretSharing
 
-Distribuzione di una parte del segreto a n persone, ne saranno necessarie k per ricostruirlo
-Basato suaritmetica modulare
+Distribuzione di una parte del segreto a n persone, ne saranno necessarie k per ricostruirlo  
+Basato sull'aritmetica modulare
 * S : segreto
 * n : num partecipanti
 * k : partecipanti necessari a ricostruire il segreto
@@ -25,7 +25,7 @@ Sono necessari k partecipanti per ricostruire il segreto
 
 ______________________________________________________________________________________________________________________
 
-Distribution of a slice of the secret to n people, k people will be necessary to recreate the secret
+Distribution of a slice of the secret to n people, k people will be necessary to recreate the secret  
 Based on modular arithmetic
 * S : secret
 * n : num participants
