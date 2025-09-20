@@ -246,12 +246,12 @@ int gauss(double coef_mat[][MAX_DIM], double term_noti[], double sol[], int dim)
                 coef_mat[i][k] = coef_mat[i][k] - alfa * coef_mat[j][k];
             // termini noti
             term_noti[i] = term_noti[i] - alfa * term_noti[j];
-        } // for su righe i da j+1 a n
-    }     // for sui primi n-1 elemnti della diagonale a[j][j]
+        }
+    }     // for sui primi n-1 elementi della diagonale a[j][j]
     // Check su determinante
     if (coef_mat[dim - 1][dim - 1] == 0)
     {
-        // cout << "Righe linearmente dipendenti. Soluzioni infinite\n\n";
+        // Righe linearmente dipendenti. Soluzioni infinite
         return (1);
     }
     // Trovo ora la soluzione
@@ -262,7 +262,7 @@ int gauss(double coef_mat[][MAX_DIM], double term_noti[], double sol[], int dim)
         for (k = i + 1; k < dim; k++)
             temp = temp - coef_mat[i][k] * sol[k];
         sol[i] = temp / coef_mat[i][i];
-    } // for sulle righe n-1,n-2, ..., 1
+    }
     return (0);
 }
 
@@ -274,27 +274,14 @@ int pivot(int dim, int j, double matr[][MAX_DIM], double tn[])
     int k, r;
     double temp;
     char cont;
-    // for( k=j; matr[k,j]==0 & k<=dim; k++);
-    // system("cls");
-    // cout << " Pivoting: passo (" << j << ")\n";
-    // stampa(matr, tn, dim);
-    // system("PAUSE");
     // cerco il primo elemento non nullo
     k = j;
     while (k < dim && matr[k][j] == 0)
         ++k;
-    /*if (k < dim) // esiste k tc matr[k,j]==0
-        cout << "matr[j][j] non nullo per j=" << k + 1 << "\n";
-    else
-    {
-        cout << "Pivot NULLO !!\n\n";
-        return (-1);
-    }*/
     if (k >= dim)
         return -1;
     if (k != j)
     {
-        // cout << "Scambio Riga " << j << " con " << k << "\n";
         // scambio righe
         for (r = j; r < dim; r++)
         {
@@ -356,9 +343,6 @@ int modFrazioni(int x, int y, int m)
         X[1] = x > 0 ? x - m : x + m;
         Y[1] = y > 0 ? y - m : y + m;
 
-        // cout << X[0] << " " << X[1] << endl;
-        // cout << Y[0] << " " << Y[1] << endl;
-
         i = 0, j = 0;
         do
         {
@@ -374,7 +358,6 @@ int modFrazioni(int x, int y, int m)
                     return -1;
             }
         } while (j < 2 && res == 1);
-        // cout << "res: " << res << endl;
 
         // semplifico
         x = X[i] / res;
@@ -386,7 +369,6 @@ int modFrazioni(int x, int y, int m)
             x *= -1;
             y *= -1;
         }
-        // cout << "Nuova frazione: " << x << "/" << y << endl;
     }
 
     return x < 0 ? x + m : x;
